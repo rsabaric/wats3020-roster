@@ -27,8 +27,8 @@ class Person{
 // `constructor()` method from the `Person` class.)
 //
 class Student extends Person {
-    constructor (name,email){
-        super (name,email);
+    constructor (name, email){
+        super (name, email);
         this.attendance = [];
     }
  //    TODO: Create another method on the `Student` class called `calculateAttendance`.
@@ -43,7 +43,7 @@ class Student extends Person {
             counter = counter + mark; 
         }
         let attendancePercentage = counter / this.attendance.length * 100;
-        return '${attendancePercentage}%';
+        return '${{attendancePercentage.toFixed(2)}%';
         } else {
             return "0%";
         }
@@ -57,8 +57,8 @@ class Student extends Person {
 // when an instance of `Teacher` is created).
 
 class Teacher extends Person {
-    constructor (name,email,honorific){
-        super(name,email);
+    constructor (name, email, honorific){
+        super(name, email);
         this.honorific = honorific;
     }
 }
@@ -85,9 +85,9 @@ class Course {
     // `updateRoster()`, so it might look like this: `updateRoster(this)`.
     
     addStudent(){
-        let name = prompt('Student Full Name:');
-        let email = prompt('Student Email:');
-        let newStudent = new Student (name,email);
+        let name = prompt ('Student Full Name:');
+        let email = prompt ('Student Email:');
+        let newStudent = new Student (name, email);
         this.students.push(newStudent);
         updateRoster(this);
     }
@@ -105,7 +105,7 @@ class Course {
         let email = prompt ('Teacher Email:');
         let honorific = prompt ('Honorific (i.e. Dr., Prof., Mr., Ms.,):');
         
-        this.teacher = new Teacher(name,email,honorific);
+        this.teacher = new Teacher(name, email, honorific);
         updateRoster(this);
     }
 
