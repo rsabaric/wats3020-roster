@@ -14,7 +14,7 @@
 class Person{
     constructor(name,email){
         this.name = name;
-        this.name = email;
+        this.email = email;
         this.username = email.split ('@')[0];
     }
 }
@@ -42,7 +42,7 @@ class Student extends Person {
         for (let mark of this.attendance){
             counter = counter + mark; 
         }
-        let attendancePercentage = counter /this.attendance.length * 100;
+        let attendancePercentage = counter / this.attendance.length * 100;
         return '${attendancePercentage}%';
         } else {
             return "0%";
@@ -127,6 +127,15 @@ class Course {
     // TODO: Now that we have retrieved the specific `Student` object we want
     // to work with, we can use the appropriate method on the `Student` object
     // to record the attendance.
+       markAttendance(username, status='present'){
+        let student = this.findStudent(username);
+        if (status === 'present'){
+            student.attendance.push(1);
+        } else {
+            student.attendance.push(0);
+        }
+        updateRoster(this);
+    }
 
 
 
