@@ -1,4 +1,5 @@
 /* JS for WATS 3020 Roster Project */
+/* Rosie Sabaric */
 
 ///////////////////////////////////////////////////
 //////// TODOs ///////////////////////////////////
@@ -10,6 +11,13 @@
 // and `email` and makes those available as attributes. The `constructor()`
 // method should also break the username from before the `@` symbol in the
 // `email` value and use that to store on a `this.username` property.
+class Person{
+    constructor(name,email){
+        this.name = name;
+        this.name = email;
+        this.username = email.spilt ('@')[0];
+    }
+}
 
 // TODO: Create another class that extends the `Person` class called `Student`.
 // The `Student` class should add a line to the `constructor()` method that sets
@@ -18,14 +26,30 @@
 // use the `super()` command so you don't lose the functionality of the
 // `constructor()` method from the `Person` class.)
 //
-
-
-// TODO: Create another method on the `Student` class called `calculateAttendance`.
+class Student extends Person {
+    constructor (name,email){
+        super (name,email);
+        this.attendance = [];
+    }
+ //    TODO: Create another method on the `Student` class called `calculateAttendance`.
 // This method should give a percentage of how many days the student was present.
 // It should return a string like "90%" or "84.732%". Attendance should be
 // recorded into an Array using either a `0` for "absent" or a `1` for "present".
 // This should allow attendance percentage to be calculated as the average of
-// all the items in the `attendance` Array.
+    calculateAttendance(){
+        if (this.attendance.length > 0){
+        let counter = 0;
+        for (let mark of this.attendance){
+            counter = counter + mark; 
+        }
+        let attendancePercentage = counter /this.attendance.length * 100;
+        return '${attendancePercentage}%';
+        } else {
+            return "0%";
+        }
+    }
+}
+
 
 
 // TODO: Create another class that extends the `Person` class called `Teacher`.
@@ -108,14 +132,15 @@ class Course {
 // `Course` object, you must gather the following information:
 //
 // TODO: Prompt the user for the `courseCode` (the number/code of the course, like "WATS 3000").
+let courseCode = prompt ('Please enter the course (i.e. WATS 3020):', 'TEST 3000');
 
 // TODO: Prompt the user for the `courseTitle` (the name of the course, like "Introduction to JavaScript").
-
+let courseTitle = prompt ('Course Title:', 'TESTING FOR EVERYONE');
 // TODO: Prompt the user for the  `courseDescription` (the descriptive summary of the course).
-
+let courseDescription = prompt ('Course Description:','A great course for all.');
 // Create a new `Course` object instance called `myCourse` using the three data points just collected from the user.
 // TODO: Add in the values for the information supplied by the user above.
-
+let myCourse = new Course(courseCode, courseTitle, courseDescription);
 
 ///////////////////////////////////////////////////
 //////// Main Script /////////////////////////////
