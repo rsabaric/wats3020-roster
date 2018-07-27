@@ -1,7 +1,7 @@
 /* Styles for WATS 3020 Roster Project */
 
 button {
-    background: royalblue;
+    background: lightslategrey;
     padding: 0.2rem;
     border: 1px rgba(255,255,255,0) solid;
     color: #fff;
@@ -31,7 +31,7 @@ tr:nth-child(even) {
     background: #fff;
 }
 tr:nth-child(2n+1) {
-    background: #d7ebff;
+    background: lightblue;
 }
 thead tr th{
     background: #fff;
@@ -50,9 +50,9 @@ body {
     margin: 0 auto;
     padding: 2rem 1rem;
     width: 90%;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Garamond, Arial, sans-serif;
 }
 html {
-    background: royalblue;
+    background: lightslategray;
     padding: 0;
 }
