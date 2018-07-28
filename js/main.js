@@ -49,7 +49,9 @@ class Student extends Person {
             counter = counter + mark; 
         }
         let attendancePercentage = counter / this.attendance.length * 100;
-        return `${attendancePercentage.toFixed(2)}%`;
+        let present = counter;
+        let absent = this.attendance.length - counter;
+        return `${attendancePercentage.toFixed(2)}%  ` + present + "  present days  " + absent + " absent days";
         } else {
             return "0%";
         }
