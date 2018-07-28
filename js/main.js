@@ -51,14 +51,12 @@ class Student extends Person {
         let attendancePercentage = counter / this.attendance.length * 100;
         let present = counter;
         let absent = this.attendance.length - counter;
-        return `${attendancePercentage.toFixed(2)}%  ` + present + "  present days,  " + absent + " absent days";
+        return `${attendancePercentage.toFixed(2)}%   ` + present + "  present days,  " + absent + " absent days";
         } else { //added toFixed(2) for better readibility and present and absent day counter
             return "0%";
         }
     }
 }
-
-
 
 // Created another class that extends the `Person` class called `Teacher`.
 // The `Teacher` class should add a property called `this.honorific` (supplied
