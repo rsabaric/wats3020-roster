@@ -13,8 +13,14 @@
 // `email` value and use that to store on a `this.username` property.
 class Person{
     constructor(name,email){
-        this.name = name;
-        this.email = email;
+        this.name = name;    
+        if (email.includes("@")){
+            console.log("includes @");
+           this.email = email;
+        } else {
+            alert ("You did not include an @ symbol.");
+            this.email = prompt ("Please enter a valid email address.");
+        } 
         this.username = email.split ('@')[0];
     }
 }
