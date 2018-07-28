@@ -19,7 +19,14 @@ class Person{
            this.email = email;
         } else {
             alert ("You did not include an @ symbol.");
-            this.email = prompt ("Please enter a valid email address.");
+            let newEmail = prompt ("Please enter a valid email address.");
+            while (!newEmail.includes("@")){
+                newEmail = prompt ("Please enter a valid email address.");
+            }
+            this.email = newEmail;
+                       
+            
+            //this.email = prompt ("Please enter a valid email address.");
         } 
         this.username = email.split ('@')[0];
     }
